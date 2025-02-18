@@ -1,9 +1,13 @@
 import { person } from "../data/data.js";
+import { navItems } from "../data/data.js";
+import { Myself } from "../data/data.js";
 
 export const home = (req, res) => {
     res.render("pages/home", {
         title: "Dinosaurs around the world",
         content: "Welcome to the world of dinosaurs",
+        navItems,
+        Myself,
     });
 };
 export const about = (req, res) => {
@@ -16,6 +20,8 @@ export const about = (req, res) => {
             "Stegosaurus",
             "<strong>Premium</strong> Diplodocus",
         ],
+        navItems,
+        Myself,
     });
 };
 export const contact = (req, res) => {
@@ -23,6 +29,8 @@ export const contact = (req, res) => {
         title: "Contact",
         content: "Contact us at 09 233 40 89",
         person,
+        navItems,
+        Myself,
     });
 };
 export const privacy = (req, res) => {
@@ -30,5 +38,7 @@ export const privacy = (req, res) => {
         title: "Privacy Policy",
         content: "Dinosaurs are protective of their privacy",
         team: false,
+        navItems,
+        Myself,
     });
 };

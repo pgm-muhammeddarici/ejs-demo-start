@@ -87,11 +87,23 @@ export const navItems = [
     label: "Home",
   },
   {
-    url: "/dinosaurs",
-    label: "Dinosaurs",
-  },
-  {
     url: "/contact",
     label: "Contact",
   },
+  {
+    url: "/about",
+    label: "About",
+  },
+  {
+    url: "/privacy",
+    label: "Privacy",
+  },
 ];
+
+export const Myself = [
+  {
+    Naam: "Muhammed",
+    Familienaam: "Darici",
+    Woonplaats: "Gent",
+  }
+]
