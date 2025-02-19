@@ -1,6 +1,5 @@
-import { person } from "../data/data.js";
-import { navItems } from "../data/data.js";
-import { Myself } from "../data/data.js";
+import { person, navItems, Myself, dinosaurs } from "../data/data.js";
+import { index, detail } from "./DinoController.js";
 
 export const home = (req, res) => {
     res.render("pages/home", {
@@ -22,6 +21,7 @@ export const about = (req, res) => {
         ],
         navItems,
         Myself,
+        dinosaurs,
     });
 };
 export const contact = (req, res) => {
@@ -31,6 +31,7 @@ export const contact = (req, res) => {
         person,
         navItems,
         Myself,
+        dinosaurs,
     });
 };
 export const privacy = (req, res) => {
@@ -40,5 +41,33 @@ export const privacy = (req, res) => {
         team: false,
         navItems,
         Myself,
+        dinosaurs,
     });
+};
+
+export const dinosaursIndex = (req, res) => {
+    res.render("dinosaurs/index", {
+        title: "Dinosaurs",
+        dinosaurs,
+        navItems,
+        Myself,
+    });
+};
+
+export const dinosaursDetail = (req, res) => { 
+    const dinosaur = dinosaurs.find((dino) => dino.slug === req.params.slug);
+    if (dinosaur) {
+        res.render("dinosaurs/slug", {
+            title: dinosaur.name,
+            dino: dinosaur,
+            navItems,
+            Myself,
+        });
+    } else {
+        res.status(404).render("errors/404", {
+            layout: "layouts/error",
+            navItems,
+            Myself,
+        });
+    }
 };

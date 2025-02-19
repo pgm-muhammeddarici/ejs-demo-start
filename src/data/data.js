@@ -98,6 +98,10 @@ export const navItems = [
     url: "/privacy",
     label: "Privacy",
   },
+  {
+    url: "/dinosaurs",
+    label: "Dinosaurs",
+  }
 ];
 
 export const Myself = [
